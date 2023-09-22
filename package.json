@@ -2,7 +2,16 @@
   "name": "lkon-syntax-highlighting",
   "displayName": "LKON Syntax highlighting",
   "description": "Syntax highlighting support for LKON.",
-  "version": "0.0.2",
+  "icon": "icon.png",
+  "version": "0.0.4",
+  "license": "MIT",
+  "publisher": "yobonez",
+  "author": "yobonez <59935203+yobonez@users.noreply.github.com> (https://github.com/yobonez/)",
+  "contributors": ["ParrotCore"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yobonez/vscode-lkon-highlighting.git"
+  },
   "engines": {
     "vscode": "^1.81.0"
   },
