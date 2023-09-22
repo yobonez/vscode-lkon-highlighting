@@ -2,7 +2,7 @@
   "name": "lkon-syntax-highlighting",
   "displayName": "LKON Syntax highlighting",
   "description": "Syntax highlighting support for LKON.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "engines": {
     "vscode": "^1.81.0"
   },
@@ -10,16 +10,9 @@
     "Programming Languages"
   ],
   "contributes": {
-    "main":"./extension.ts",
-    "commands": [
-      {
-        "command": "vscode-lkon.grammar-inject",
-        "title": "LKON: .js Embedded syntax highlighting (grammar injection) (RELOAD REQUIRED)"
-      }
-    ],
     "languages": [{
       "id": "lkon",
-      "aliases": ["Lena Krukov's Object Notation", "lkon"],
+      "aliases": ["Language for Konfiguration Object Notation", "lkon"],
       "extensions": [".lkon"],
       "configuration": "./language-configuration.json"
     }],
