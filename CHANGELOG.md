@@ -1,5 +1,2 @@
-# Change Log
-- Initial release
-- Textmate grammars
-
-## [Unreleased]
+# Changelog
+- Better icon
