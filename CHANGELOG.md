@@ -1,2 +1,2 @@
 # Changelog
-- Better icon
+- Implemented escape character matching (highlighting)

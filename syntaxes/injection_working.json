@@ -3,17 +3,35 @@
     "injectionSelector": "L:string.template.js",
     "patterns": [
 		{
-			"include": "#lkon-embedded-identifier"
+			"include": "#lkon-embedded"
 		}
 	],
     "repository": {
-		"lkon-embedded-identifier": {
+		"lkon-embedded": {
             "patterns": [
                 {
 					"begin": "#startlkon",
 					"end": "#endlkon",
 					"name":"meta.embedded.lkon",
 					"patterns": [
+						{
+							"contentName": "string.quoted.double.lkon",
+							"name": "meta.var.expr.lkon",
+							"begin": "(?<==>.*)\"",
+							"beginCaptures": {
+								"0": {"name": "punctuation.definition.string.begin.lkon"}
+							},
+							"end": "\"",
+							"endCaptures": {
+								"0": {"name": "punctuation.definition.string.end.lkon"}
+							},
+							"patterns": [
+								{
+									"name": "constant.character.escape.lkon",
+									"match":"(\\\\u[0-9A-Fa-f]{4})|(\\\\.)|(\\\\\")"
+								}
+							]
+						},
 						{
 							"name":"comment.line.lkon",
 							"match": "^([\t ])*?#.*"
@@ -35,15 +53,6 @@
 							"match":"(=>)",
 							"captures": {
 								"1":{"name": "keyword.operator.assignment.lkon"}
-							}
-						},
-						{
-							"name":"meta.var.expr.lkon",
-							"match":"(?<==>.*).*((\")(.*)(\"))",
-							"captures": {
-								"2":{"name": "string.quoted.double.lkon", "patterns": [{"name":"punctuation.definition.string.begin.lkon", "match": "\""}]},
-								"3":{"name": "string.quoted.double.lkon"},
-								"4":{"name": "string.quoted.double.lkon", "patterns": [{"name":"punctuation.definition.string.end.lkon", "match": "\""}]}
 							}
 						},
 						{
@@ -139,13 +148,22 @@
 							}
 						},
 						{
-							"name":"meta.var.expr.lkon",
-							"match":"(?<=import *|use *|as *).*((\")(.*)(\"))",
-							"captures": {
-								"2":{"name": "string.quoted.double.lkon", "patterns": [{"name":"punctuation.definition.string.begin.lkon", "match": "\""}]},
-								"3":{"name": "string.quoted.double.lkon"},
-								"4":{"name": "string.quoted.double.lkon", "patterns": [{"name":"punctuation.definition.string.end.lkon", "match": "\""}]}
-							}
+							"contentName": "string.quoted.double.lkon",
+							"name": "meta.importuseas.lkon",
+							"begin": "(?<=use.*|as.*)\"",
+							"beginCaptures": {
+								"0": {"name": "punctuation.definition.string.begin.lkon"}
+							},
+							"end": "\"",
+							"endCaptures": {
+								"0": {"name": "punctuation.definition.string.end.lkon"}
+							},
+							"patterns": [
+								{
+									"name": "constant.character.escape.lkon",
+									"match":"(\\\\u[0-9A-Fa-f]{4})|(\\\\.)|(\\\\\")"
+								}
+							]
 						},
 						{
 							"name": "punctuation.terminator.statement.lkon",
