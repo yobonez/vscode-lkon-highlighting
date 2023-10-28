@@ -3,6 +3,9 @@
 	"name": "Language for Konfiguration Object Notation",
 	"patterns": [
 		{
+			"include": "#multiline_comment"
+		},
+		{
 			"include": "#var_expr_str_double_quote"
 		},
 		{
@@ -28,6 +31,18 @@
 		}
 	],
 	"repository": {
+		"multiline_comment": {
+			"contentName": "comment.block.lkon",
+			"begin": "'''",
+			"beginCaptures": {
+				"0": {"name": "punctuation.definition.comment.lkon"}
+			},
+			"end": "'''",
+			"endCaptures": {
+				"0": {"name": "punctuation.definition.comment.lkon"}
+			}
+			
+		},
 		"var_expr_str_double_quote": {
 			"contentName": "meta.var.expr.lkon",
 			"begin": "(?<==>.*)\"",
@@ -42,7 +57,7 @@
 			"patterns": [
 				{
 					"name": "constant.character.escape.lkon",
-					"match": "(\\\\u[0-9A-Fa-f]{4})|(\\\\.)|(\\\\\")"
+					"match": "(?=.*\"date)([-:.])|(\\\\u[0-9A-Fa-f]{4})|(\\\\.)|(\\\\\")"
 				}
 			]
 		},
@@ -104,7 +119,7 @@
 				},
 				{
 					"name":"meta.var.expr.lkon",
-					"match": "(?<==>.*)(?<=\".*\")(ascii|base64|base64url|hex|ucs2|ucs-2|utf16le|utf-16le|utf8|utf-8|bin|binary|latin1)",
+					"match": "(?<==>.*)(?<=\".*\")(date|ascii|base64|base64url|hex|ucs2|ucs-2|utf16le|utf-16le|utf8|utf-8|bin|binary|latin1)",
 					"captures": {
 						"1": {"name": "keyword.other.encoding.lkon"}
 					}
@@ -135,7 +150,7 @@
 			"patterns": [
 				{
 					"name": "constant.character.escape.lkon",
-					"match": "(\\\\u[0-9A-Fa-f]{4})|(\\\\.)|(\\\\\")"
+					"match": "(?=.*\"date)([-:.])|(\\\\u[0-9A-Fa-f]{4})|(\\\\.)|(\\\\\")"
 				}
 			]
 		},
@@ -167,7 +182,7 @@
 				},
 				{
 					"name":"meta.importuseas.lkon",
-					"match":"(?<=(use|import).*\".*\")(ascii|base64|base64url|hex|ucs2|ucs-2|utf16le|utf-16le|utf8|utf-8|bin|binary|latin1)",
+					"match":"(?<=(use|import).*\".*\")(date|ascii|base64|base64url|hex|ucs2|ucs-2|utf16le|utf-16le|utf8|utf-8|bin|binary|latin1)",
 					"captures": {
 						"2": {"name": "keyword.other.encoding.lkon"}
 					}
