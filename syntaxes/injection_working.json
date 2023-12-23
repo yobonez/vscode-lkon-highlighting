@@ -75,9 +75,9 @@
 						},
 						{
 							"name":"meta.var.expr.lkon",
-							"match":"(?<==>.*)(?<!\".*)((\\b(main)\\b|(\\b([a-zA-Z_][a-zA-Z0-9_]*)\\b))(\\.)){1}(([a-zA-Z0-9_]*)(\\.)?)*",
+							"match":"(?<==>.*)(?<!\".*)((\\b(this)\\b|(\\b([a-zA-Z_][a-zA-Z0-9_]*)\\b))(\\.)){1}(([a-zA-Z0-9_]*)(\\.)?)*",
 							"captures":{
-								"3": {"name": "variable.language.main.lkon"},
+								"3": {"name": "variable.language.this.lkon"},
 								"4": {"name": "variable.other.object"},
 								"6": {"name": "puntuation.accessor.lkon"},
 								"7": {"name": "variable.other.property.lkon"}
