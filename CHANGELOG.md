@@ -1,2 +1,2 @@
 # Changelog
-v0.0.7 - Added multiline comments and datetime-string highlighting
+v0.0.8 - Cosmetic change - changed keyword "this" to "main"
