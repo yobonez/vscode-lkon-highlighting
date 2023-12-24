@@ -1,2 +1,2 @@
 # Changelog
-v0.1.0 - Change keyword "this" to "main"
+v0.1.1 - "undefined" becomes "Undefined" , "null" becomes "Null"
